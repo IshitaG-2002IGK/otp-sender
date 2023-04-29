@@ -10,6 +10,10 @@
     <link rel="stylesheet" href="" />
   </head>
   <body>
-    <p>{{ msg }}</p>
+    <form action="otp" method="post">
+      <input type="text" name="name" placeholder="name" />
+      <input type="text" name="email" placeholder="email" />
+      <input type="submit" value="GENERATE" />
+    </form>
   </body>
 </html>
