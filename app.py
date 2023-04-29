@@ -1,17 +1,18 @@
 from flask import Flask, redirect, session, url_for, render_template, request
 import random
 import smtplib
+# from dotenv import load_dotenv
 
 
 def generate(email):
     otp = ''.join([str(random.randint(0,9)) for i in range(6)])
-    password = 'hfqkzjryvrxigwzt'
+    password = 'dtvslhyhmhsmuiht'
     server = smtplib.SMTP('smtp.gmail.com', 587)
     server.starttls()
-    server.login('hari02maha@gmail.com', password)
+    server.login('ishitagopal98@gmail.com', password)
     msg = 'Hello, your otp is ' + str(otp)
     print(otp)
-    server.sendmail('hari02maha@gmail.com', email, msg)
+    server.sendmail('ishitagopal98@gmail.com', email, msg)
     print("sent!")
     server.quit()
     return otp
