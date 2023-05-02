@@ -27,13 +27,13 @@ app = Flask(__name__)
 
 @app.route('/', methods=["POST", "GET"])
 
-def index(): 
-    
+def index():
+
     return render_template('index.html')
 
 @app.route('/otp_ui', methods=["POST", "GET"])
 
-def otp():
+def otp_ui():
     global otObtained
     name = request.form['name']
     email = request.form['email']
@@ -61,7 +61,7 @@ def nextPage():
         msg = "Verification Successful!"
     else:
         msg = "Not the right OTP!"
-    
+
     return render_template('nextPage.html', msg = msg)
 
 
