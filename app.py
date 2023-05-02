@@ -72,11 +72,11 @@ def nextPage():
     ot = ot0 + ot1 + ot2 + ot3 + ot4 + ot5
     print(ot)
     if(ot==otObtained):
-        msg = "Verification Successful!"
+        return render_template('nextPage_Verified.html')
     else:
-        msg = "Not the right OTP!"
+        return render_template('nextPage_Verified.html')
 
-    return render_template('nextPage.html', msg = msg)
+    # return render_template('nextPage.html', msg = msg)
 
 
 if __name__ == "__main__":
