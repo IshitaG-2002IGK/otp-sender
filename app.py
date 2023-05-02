@@ -56,7 +56,15 @@ def otp_ui():
 @app.route('/nextPage', methods=["POST", "GET"])
 def nextPage():
     msg = ""
-    ot = request.form["otp"]
+    ot0 = int(request.form["otp0"]) * 100000
+    ot1 = int(request.form["otp1"]) * 10000
+    ot2 = int(request.form["otp2"]) * 1000
+    ot3 = int(request.form["otp3"]) * 100
+    ot4 = int(request.form["otp4"]) * 10
+    ot5 = int(request.form["otp5"]) * 1
+    
+    ot = ot0 + ot1 + ot2 + ot3 + ot4 + ot5
+    print(ot)
     if(ot==otObtained):
         msg = "Verification Successful!"
     else:
