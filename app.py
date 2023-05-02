@@ -74,7 +74,7 @@ def nextPage():
     if(ot==otObtained):
         return render_template('nextPage_Verified.html')
     else:
-        return render_template('nextPage_Verified.html')
+        return render_template('nextPage_Failed.html')
 
     # return render_template('nextPage.html', msg = msg)
 
