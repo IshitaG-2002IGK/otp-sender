@@ -27,14 +27,14 @@ def index():
     
     return render_template('index.html')
 
-@app.route('/otp', methods=["POST", "GET"])
+@app.route('/otp_ui', methods=["POST", "GET"])
 
 def otp():
     global otObtained
     name = request.form['name']
     email = request.form['email']
     otObtained = generate(email)
-    return render_template('otp.html')
+    return render_template('otp_ui.html')
 
 @app.route('/nextPage', methods=["POST", "GET"])
 def nextPage():
