@@ -1,6 +1,10 @@
 from flask import Flask, redirect, session, url_for, render_template, request
 import random
 import smtplib
+# from twilio.rest import Client
+# from dotenv import load_dotenv
+# import os
+
 # from dotenv import load_dotenv
 
 
@@ -17,7 +21,7 @@ def generate(email):
     server.quit()
     return otp
 
-otObtained = 0;
+otObtained = 0
 
 app = Flask(__name__)
 
@@ -35,6 +39,19 @@ def otp():
     email = request.form['email']
     otObtained = generate(email)
     return render_template('otp_ui.html')
+
+# def generate(contact):
+#     OTP=random.randint(1000,9999)
+#     client=Client()
+#     account_sid=os.getenv("TWILIO_ACCOUNT_SID")
+#     auth_token=os.getenv("TWILIO_AUTH_TOKEN")
+#     client=Client(account_sid,auth_token)
+
+#     message=client.messages.create(
+#         body="Your OTP is "+str(OTP), from_="+19783961781",to=contact
+#         )
+#     # print(OTP)
+#     return OTP
 
 @app.route('/nextPage', methods=["POST", "GET"])
 def nextPage():
