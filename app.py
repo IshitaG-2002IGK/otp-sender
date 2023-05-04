@@ -71,13 +71,16 @@ def nextPage():
     
     ot = ot0 + ot1 + ot2 + ot3 + ot4 + ot5
     print(ot)
-    if(ot==otObtained):
+    if(ot==int(otObtained)):
         return render_template('nextPage_Verified.html')
     else:
         return render_template('nextPage_Failed.html')
 
     # return render_template('nextPage.html', msg = msg)
 
+@app.route('/', methods=["POST", "GET"])
+def backHome():
+    render_template('index.html')
 
 if __name__ == "__main__":
     app.run(debug=True)
